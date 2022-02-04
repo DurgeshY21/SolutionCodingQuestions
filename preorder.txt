@@ -1,0 +1,15 @@
+class Solution {
+public:
+    void dfsearch(Node *node, vector<int> &ans){
+         if(node==NULL)
+             return;
+        ans.push_back(node->data);
+        dfsearch(node->left, ans);
+        dfsearch(node->right, ans);
+        }
+    vector<int> preorderTraversal(Node* root) {
+        vector<int> preorder;
+        dfsearch(root, preorder);
+        return preorder;
+    }
+};
